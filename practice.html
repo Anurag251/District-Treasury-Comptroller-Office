@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        max-width: 400px;
+        height: 300px;
+        margin: auto;
+        overflow: hidden;
+        margin-top: 4rem;
+      }
+
+      .container .image {
+        width: 100%;
+      }
+
+      .container .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .container .wrapper {
+        display: flex;
+        transition: 1s;
+        /* transform: translateX(-0%); */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="image">
+          <img
+            src="https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          />
+        </div>
+
+        <div class="image">
+          <img
+            src="https://images.pexels.com/photos/518244/pexels-photo-518244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          />
+        </div>
+
+        <div class="image">
+          <img
+            src="https://images.pexels.com/photos/1301547/pexels-photo-1301547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          />
+        </div>
+
+        <div class="image">
+          <img
+            src="https://images.pexels.com/photos/7755534/pexels-photo-7755534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          />
+        </div>
+
+        <div class="image">
+          <img
+            src="https://images.pexels.com/photos/262028/pexels-photo-262028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const slideImage = document.querySelectorAll(".image");
+      const wrap = document.querySelector(".wrapper");
+
+      let noOfSlide = slideImage.length - 1;
+
+      wrap.style.width = `${noOfSlide + 1}00%`;
+
+      let current = 0;
+
+      const slide = (e) => {
+        wrap.style.transform = `translateX(-${e}%)`;
+      };
+
+      const run = () => {
+        current += 100 / (noOfSlide + 1);
+        slide(current);
+
+        console.log(current);
+
+        if (current === 80) {
+          current = 0;
+        }
+      };
+
+      setInterval(run, 3000);
+    </script>
+  </body>
+</html>

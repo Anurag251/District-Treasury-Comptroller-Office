@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
+
+$main: #294186
+$pri: #CB3644
+$dark: #001552
+$light: #ffffff
+$bg: #F0F0F0
+$para: #2D2D2D
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  background: none
+  border: none
+  outline: none
+  font-family: 'Lato', sans-serif
+  text-decoration: none
+  list-style: none
+  color: $dark
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin grid($column)
+  display: grid
+  grid-template-columns: $column
+  grid-gap: 20px
+
+@mixin imageBg()
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin wrapper()
+  max-width: 1300px
+  margin: 0 auto
+  padding: 0 20px
+
+@mixin trans()
+  transition: .4s
+
+@mixin button()
+  padding: .4rem 1rem
+  font-size: 14px
+  background-color: $pri
+  color: $light
+  border-radius: 10px
+
+body
+  background-color: $light
+  --swiper-theme-color: #294186
+
+section
+  padding: 3rem 0
+
+  &.bg
+    padding: 3rem 0
+    background-color: $bg
+
+h4
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 19px
+  display: flex
+  align-items: center
+  color: $dark
+
+p
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 29px
+  text-align: justify
+  color: $para
+
+.title
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 58px
+  text-align: center
+  color: $main
+
+.wrapper
+  @include wrapper()
+
+.swiper-pagination-bullet
+  height: 5px
+  width: 5px
+  border-radius: 10px !important
+  @include trans()
+
+  &.swiper-pagination-bullet-active
+    width: 20px
+
+/*************    header     **************/
+header
+  background-color: $light
+
+  .header-top
+    @include wrapper()
+    @include grid($column: 1fr 2fr 1fr)
+    padding: 10px 20px
+
+    .logo, .flag
+      width: 100%
+      height: 70px
+      @include flex($justify: flex-start)
+
+      img
+        height: 70px
+        width: 70px
+        object-fit: contain
+
+    .flag
+      @include flex($justify: flex-end)
+
+    .company-name
+      text-align: center
+
+      h5
+        font-size: 18px
+        line-height: 144.5%
+        font-weight: 600
+
+  .navbar
+    background-color: $main
+
+    .wrapper
+      @include flex($justify: space-between)
+
+      .nav-link
+        @include flex($justify: flex-start)
+
+        li
+          margin-right: 2rem
+
+        .link
+          font-size: 16px
+          padding: 1rem 0
+          color: $light
+          font-weight: 400
+          cursor: pointer
+
+    .others
+      @include flex($justify: flex-end)
+
+    .social-media-icons
+      @include flex($justify: flex-end)
+
+      .icon
+        margin: 0 10px
+
+        i
+          font-size: 17px
+          color: $light
+          opacity: .78
+
+          &:hover
+            opacity: 1
+
+    .line
+      height: 30px
+      border-left: 1px dashed $light
+      margin: 0 26px
+
+    .language-switch
+      @include flex($justify: flex-end)
+
+      button
+        opacity: .60
+        color: $light
+        font-size: 16px
+        margin-right: 10px
+        cursor: pointer
+
+        &.active
+          opacity: 1
+
+/*************    banner     **************/
+.banner
+  .swiper-pagination-bullet
+    background-color: $light
+
+  img
+    width: 100%
+    height: 79.5vh
+    object-fit: cover
+
+/*************    about-us     **************/
+.about-us
+  @include grid($column: 3fr 1fr)
+
+  .information
+    h2
+      margin-bottom: 23px
+      font-size: 36px
+      font-weight: 600
+
+  .about-image
+    .image
+      height: 400px
+      border-radius: 10px
+      @include imageBg()
+      position: relative
+
+      .info
+        position: absolute
+        left: 5px
+        bottom: 5px
+        border-radius: 10px
+        background-color: rgba($dark, .78)
+        backfrop-filter: blur(10px)
+        min-width: 230px
+        padding: .7rem
+
+        .name, p, .phone, strong
+          color: $light
+
+        .name
+          font-size: 17px
+
+        p
+          font-size: 14px
+          margin-bottom: 1rem
+
+        .phone
+          font-size: 12px
+
+/*************    notice     **************/
+.notice
+  .list
+    @include grid($column: 1fr 1fr 1fr 1fr)
+    margin-top: 2rem
+
+    .item
+      background-color: $light
+      border-radius: 15px
+
+      img
+        height: 190px
+        width: 100%
+        object-fit: cover
+        border-radius: 15px
+
+      .details
+        padding: .8rem
+
+        button
+          margin-top: 1rem
+          @include button()
+
+/*************    notice     **************/
+.our-team
+  .title
+    margin-bottom: 2rem
+
+  .mySwiper
+    padding-bottom: 2rem
+
+  .item
+    border-radius: 10px
+
+    img
+      height: 225px
+      width: 100%
+      object-fit: cover
+      border-radius: 10px
+
+    .info
+      padding: .7rem
+
+      .name, p, .phone, strong
+        color: $dark
+
+      .name
+        font-size: 17px
+
+      p
+        font-size: 14px
+        margin-bottom: 1rem
+
+      .phone
+        font-size: 12px
+
+.our-service
+  .title
+    margin-bottom: 2rem
+
+  .list
+    @include grid($column: 1fr 1fr 1fr)
+
+    .item
+      text-align: center
+      height: 300px
+      position: relative
+      margin-bottom: 4rem
+
+      img
+        height: 250px
+        width: 100%
+        object-fit: cover
+        border-radius: 15px
+        margin-bottom: 1rem
+
+      .details
+        position: absolute
+        top: 15px
+        left: 50%
+        max-width: 375px
+        width: 100%
+        transform: translateX(-50%)
+        border-radius: 15px
+        border: 2px solid $light
+        padding: 245px 1rem 1rem
+        z-index: 1
+
+      button
+        margin-top: 1rem
+        @include button()
+
+footer
+  background-color: $dark
+  padding: 3rem 0
+
+  .footer-containt
+    @include grid($column: 2fr 1fr 1fr)
+
+  .footer-title
+    font-style: normal
+    font-weight: bold
+    font-size: 30px
+    line-height: 36px
+    color: $light
+    margin-bottom: 1.5rem
+
+  ul
+    li
+      margin-bottom: .5rem
+
+      a
+        button
+          @include flex($justify: flex-start)
+          font-style: normal
+          font-weight: normal
+          font-size: 18px
+          color: #BFBFBF
+          cursor: pointer
+          text-align: left
+
+          i
+            margin-right: 10px
+            font-size: 13px
+            color: #BFBFBF
+
+          &:hover
+            color: $light
+
+            i
+              color: $light
+
+  .contact-sec
+    .footer-sub-title
+      font-style: normal
+      font-weight: bold
+      font-size: 24px
+      line-height: 29px
+      color: $light
