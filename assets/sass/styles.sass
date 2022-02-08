@@ -49,6 +49,14 @@ $para: #2D2D2D
   color: $light
   border-radius: 10px
 
+@mixin dark($opacity)
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba($dark, $opacity)
+
 body
   background-color: $light
   --swiper-theme-color: #294186
@@ -84,6 +92,7 @@ p
   line-height: 58px
   text-align: center
   color: $main
+  margin-bottom: 2rem
 
 .wrapper
   @include wrapper()
@@ -233,6 +242,10 @@ header
 
 /*************    notice     **************/
 .notice
+  &.download
+    .list
+      .item
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
   .list
     @include grid($column: 1fr 1fr 1fr 1fr)
     margin-top: 2rem
@@ -254,13 +267,16 @@ header
           margin-top: 1rem
           @include button()
 
-/*************    notice     **************/
+/*************    out-team     **************/
 .our-team
-  .title
-    margin-bottom: 2rem
-
   .mySwiper
     padding-bottom: 2rem
+
+  .list
+    @include grid($column: 1fr 1fr 1fr 1fr 1fr 1fr)
+
+    .item
+      margin-bottom: 2rem
 
   .item
     border-radius: 10px
@@ -282,15 +298,13 @@ header
 
       p
         font-size: 14px
-        margin-bottom: 1rem
+        margin-bottom: .7rem
 
       .phone
         font-size: 12px
 
+/*************    our-service     **************/
 .our-service
-  .title
-    margin-bottom: 2rem
-
   .list
     @include grid($column: 1fr 1fr 1fr)
 
@@ -323,17 +337,18 @@ header
         margin-top: 1rem
         @include button()
 
+/*************    footer     **************/
 footer
   background-color: $dark
   padding: 3rem 0
 
   .footer-containt
-    @include grid($column: 2fr 1fr 1fr)
+    @include grid($column: 2fr 1.5fr 2fr)
 
   .footer-title
     font-style: normal
     font-weight: bold
-    font-size: 30px
+    font-size: 28px
     line-height: 36px
     color: $light
     margin-bottom: 1.5rem
@@ -347,14 +362,14 @@ footer
           @include flex($justify: flex-start)
           font-style: normal
           font-weight: normal
-          font-size: 18px
+          font-size: 16px
           color: #BFBFBF
           cursor: pointer
           text-align: left
 
           i
             margin-right: 10px
-            font-size: 13px
+            font-size: 12px
             color: #BFBFBF
 
           &:hover
@@ -364,9 +379,222 @@ footer
               color: $light
 
   .contact-sec
+    .item
+      margin-bottom: 1rem
+
     .footer-sub-title
       font-style: normal
       font-weight: bold
-      font-size: 24px
+      font-size: 22px
       line-height: 29px
       color: $light
+
+    p
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 22px
+
+      color: #BFBFBF
+
+/*************    gallery     **************/
+.gallery
+  .list
+    @include grid($column: 1fr 1fr 1fr 1fr)
+
+    .item
+      .gallery-image
+        height: 200px
+        width: 100%
+        @include imageBg()
+        position: relative
+        overflow: hidden
+        cursor: pointer
+
+        &:hover
+          &::after
+            height: 800px
+            width: 800px
+            background-color: rgba($dark, .7)
+            backdrop-filter: blur(10px)
+
+          .name
+            top: 50%
+            transform: translate(-50%, -50%) scale(1.4)
+            opacity: 1
+
+        &::after
+          content: ''
+          position: absolute
+          left: 0%
+          top: 0%
+          transform: translate(-50%, -50%)
+          height: 0
+          width: 0
+          border-radius: 50%
+          background-color: rgba($dark, .0)
+          backdrop-filter: blur(0)
+          @include trans()
+          z-index: 1
+
+      .name
+        color: $light
+        position: absolute
+        left: 50%
+        top: 30%
+        transform: translate(-50%, -50%) scale(1.4)
+        opacity: 0
+        @include trans()
+        z-index: 2
+
+/*************    gallery-popup     **************/
+.gallery-popup
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 100
+  @include flex($justify: center)
+  flex-direction: column
+  pointer-events: none
+  opacity: 0
+  @include trans()
+
+  &.active
+    opacity: 1
+    pointer-events: auto
+
+    .gallery-bg
+      opacity: 1
+
+    .gallery-images
+      transform: translateY(0) scale(1)
+
+  .gallery-bg
+    @include dark($opacity: .9)
+    backdrop-filter: blur(10px)
+    opacity: 0
+    z-index: 1
+    transition: .4s
+
+  .close-gallery-btn
+    position: absolute
+    right: 30px
+    top: 30px
+    height: 30px
+    width: 30px
+    @include flex($justify: center)
+    cursor: pointer
+    z-index: 2
+    @include trans()
+
+    &:hover
+      transform: rotate(90deg)
+
+    img
+      width: 100%
+
+  .title
+    position: relative
+    text-align: center
+    font-size: 30px
+    color: $light
+    z-index: 2
+
+  .gallery-images
+    position: relative
+    .gallery-images
+      transform: translateY(-200px) scale(.8)
+    @include trans()
+    transition-delay: .2s
+    width: 100%
+    z-index: 2
+
+    .swiper-button-next, .swiper-button-prev
+      color: $light
+      background-color: rgba($pri, .3)
+      padding: 2rem
+      border-radius: 50%
+      backdrop-filter: blur(4px)
+
+    .swiper-wrapper
+      padding: 1.5rem 0
+
+    .swiper-slide
+      height: 400px
+      width: 100%
+      @include imageBg()
+      transition: .4s ease-in-out
+      background-size: contain
+
+      &.swiper-slide-active
+        transform: scale(1.1)
+
+/*************    contact-page    **************/
+.contact-page
+  .contact-details
+    @include grid($column: 1fr 2fr)
+
+    .contact-sec
+      .item
+        margin-bottom: 1rem
+
+      .footer-sub-title
+        font-style: normal
+        font-weight: bold
+        font-size: 22px
+        line-height: 29px
+        color: $dark
+
+      p
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 22px
+        color: #424242
+
+    .contact-list
+      width: 100%
+
+      table
+        border-collapse: collapse
+
+        .head
+          background-color: $main
+          border: 1px solid $main
+          color: $light
+
+        .data
+          border-color: $dark
+
+        tr
+          th
+            border: 1px solid $light
+            padding: 1rem
+            text-align: left
+            color: $light
+            font-style: normal
+            font-weight: normal
+            font-size: 18px
+            line-height: 22px
+
+            &:nth-child(1)
+              width: 25%
+
+            &:nth-child(2)
+              width: 50%
+
+            &:nth-child(3)
+              width: 25%
+
+          td
+            padding: 1rem
+            border: 1px solid $dark
+            font-style: normal
+            font-weight: 400
+            font-size: 18px
+            line-height: 22px
+
+            &:nth-child(2)
+              font-weight: 600

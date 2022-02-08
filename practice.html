@@ -7,16 +7,24 @@
     <title>Document</title>
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       .container {
-        max-width: 400px;
-        height: 300px;
+        max-width: 100vw;
+        height: 100vh;
         margin: auto;
         overflow: hidden;
-        margin-top: 4rem;
+        /* margin-top: 4rem; */
       }
 
       .container .image {
         width: 100%;
+        height: 100%;
+        position: relative;
       }
 
       .container .image img {
@@ -28,17 +36,26 @@
       .container .wrapper {
         display: flex;
         transition: 1s;
-        /* transform: translateX(-0%); */
+      }
+
+      h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        z-index: 1;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="wrapper">
+      <div class="wrapper" slideTime="3">
         <div class="image">
           <img
             src="https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
           />
+
+          <h1>hello</h1>
         </div>
 
         <div class="image">
@@ -70,35 +87,45 @@
             src="https://images.pexels.com/photos/262028/pexels-photo-262028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           />
         </div>
+
+        <div class="image">
+          <img
+            src="https://images.pexels.com/photos/262028/pexels-photo-262028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          />
+        </div>
       </div>
     </div>
 
     <script>
       const slideImage = document.querySelectorAll(".image");
       const wrap = document.querySelector(".wrapper");
+      const text = document.querySelector("h1");
 
-      let noOfSlide = slideImage.length - 1;
+      slideTime = wrap.getAttribute("slideTime");
 
-      wrap.style.width = `${noOfSlide + 1}00%`;
+      let noOfSlide = slideImage.length;
+
+      wrap.style.width = `${noOfSlide}00%`;
 
       let current = 0;
+
+      let counter = 0;
 
       const slide = (e) => {
         wrap.style.transform = `translateX(-${e}%)`;
       };
 
       const run = () => {
-        current += 100 / (noOfSlide + 1);
+        current += 100 / noOfSlide;
         slide(current);
 
-        console.log(current);
-
-        if (current === 80) {
+        if (noOfSlide - 1 === counter++) {
           current = 0;
+          slide((current = 0));
+          counter = 0;
         }
       };
-
-      setInterval(run, 3000);
+      setInterval(run, `${parseInt(slideTime)}000`);
     </script>
   </body>
 </html>
