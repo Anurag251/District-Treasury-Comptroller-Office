@@ -3,7 +3,7 @@ const galleryPopup = document.querySelector(".gallery-popup");
 const galleryClose = document.querySelector(".close-gallery-btn");
 const galleryBg = document.querySelector(".gallery-bg");
 
-if (galleryBtns) {
+if (galleryBtns && galleryPopup && galleryClose && galleryBg) {
   galleryBtns.forEach((galleryBtn) => {
     galleryBtn.addEventListener("click", () => {
       galleryPopup.classList.add("active");

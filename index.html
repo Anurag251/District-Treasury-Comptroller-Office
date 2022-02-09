@@ -80,8 +80,8 @@
             <div class="line"></div>
 
             <div class="language-switch">
-              <button class="active">EN</button>
-              <button>NP</button>
+              <button class="active" id="engLang">EN</button>
+              <button id="nepLang">NP</button>
             </div>
           </div>
         </div>
@@ -106,6 +106,13 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
+
+    <div id="google_translate_element"></div>
+    <!-- <input
+      type="button"
+      onclick='document.getElementById("sel").options[1].selected = true;'
+      value="Change option to 2"
+    /> -->
 
     <section>
       <div class="wrapper">
@@ -599,6 +606,47 @@
         </div>
       </div>
     </footer>
+
+    <!-- <option value="en">kad</option> -->
+
+    <script>
+      const runAfter = () => {
+        const eng = document.querySelector("option[value='en']");
+        const nep = document.querySelector("option[value='ne']");
+
+        const engLang = document.querySelector("#engLang");
+        const nepLang = document.querySelector("#nepLang");
+
+        engLang.addEventListener("click", () => {
+          eng.click();
+          eng.selected = true;
+          console.log(eng);
+        });
+
+        nepLang.addEventListener("click", () => {
+          nep.click();
+          nep.selected = true;
+
+          console.log(nep);
+        });
+      };
+
+      setTimeout(runAfter, 2000);
+    </script>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
 
     <!-- swiper -->
     <script src="./assets/js/swiper.min.js"></script>
