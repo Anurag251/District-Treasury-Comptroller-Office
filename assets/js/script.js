@@ -18,3 +18,15 @@ if (galleryBtns && galleryPopup && galleryClose && galleryBg) {
     galleryPopup.classList.remove("active");
   });
 }
+
+const sideNav = document.querySelector(".side-nav");
+const sideNavBtn = document.querySelector(".side-nav-btn");
+const sideNavCloseBtn = document.querySelector(".side-nav-close-btn");
+
+sideNavBtn.addEventListener("click", () => {
+  sideNav.classList.toggle("active");
+});
+
+sideNavCloseBtn.addEventListener("click", () => {
+  sideNav.classList.remove("active");
+});

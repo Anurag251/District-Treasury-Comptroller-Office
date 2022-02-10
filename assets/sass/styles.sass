@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
-
 $main: #294186
 $pri: #CB3644
 $dark: #001552
@@ -118,9 +117,11 @@ header
   background-color: $light
 
   .header-top
-    @include wrapper()
-    @include grid($column: 1fr 2fr 1fr)
     padding: 10px 20px
+
+    .wrapper
+      @include wrapper()
+      @include grid($column: 1fr 2fr 1fr)
 
     .logo, .flag
       width: 100%
@@ -328,13 +329,15 @@ header
         border-radius: 15px
         margin-bottom: 1rem
 
-      .details
+      .inner
+        padding: 1rem
         position: absolute
-        top: 15px
         left: 50%
-        max-width: 375px
+        top: 0
         width: 100%
         transform: translateX(-50%)
+
+      .details
         border-radius: 15px
         border: 2px solid $light
         padding: 245px 1rem 1rem
@@ -385,7 +388,9 @@ footer
             i
               color: $light
 
-  .contact-sec
+  .footer-item
+    margin-bottom: 1rem
+
     .item
       margin-bottom: 1rem
 
@@ -606,3 +611,6 @@ footer
 
             &:nth-child(2)
               font-weight: 600
+
+.side-nav, .mobile-header
+  display: none
