@@ -8,6 +8,11 @@
   .about-us
     @include grid($column: 2fr 1fr)
 
+  /*************    out-team     **************/
+  .our-team
+    .list
+      @include grid($column: 1fr 1fr 1fr 1fr 1fr)
+
 @media only screen and(max-width: 1000px)
   .wrapper
     max-width: 800px
@@ -31,6 +36,21 @@
   .our-service
     .list
       @include grid($column: 1fr 1fr)
+
+  /*************    out-team     **************/
+  .our-team
+    .list
+      @include grid($column: 1fr 1fr 1fr 1fr)
+
+  /*************    gallery     **************/
+  .gallery
+    .list
+      @include grid($column: 1fr 1fr 1fr)
+
+  /*************    contact-page    **************/
+  .contact-page
+    .contact-details
+      @include grid($column: 1fr)
 
 @media only screen and(max-width: 800px)
   .wrapper
@@ -68,19 +88,30 @@
   .side-nav
     display: block
     position: fixed
-    z-index: 10
+    z-index: 12
     top: 0
     left: -310px
     height: 100%
     width: 300px
     background-color: $dark
     padding: 1rem
-    @include trans()
     pointer-events: none
+    transition: .3s
 
     &.active
-      left: 0px
+      left: -10px
       pointer-events: auto
+      animation: sideNav .3s cubic-bezier(.44,.54,.08,-0.14)
+
+    @keyframes sideNav
+      0%
+        left: -310px
+
+      70%
+        left: 0px
+
+      100%
+        left: -10px
 
     .nav-link
       li
@@ -114,6 +145,25 @@
               color: $dark
               font-size: 17px
 
+  /*************    out-team     **************/
+  .our-team
+    .list
+      @include grid($column: 1fr 1fr 1fr)
+
+  /*************    contact-page    **************/
+  .contact-page
+    .contact-details
+      .contact-list
+        table
+          tr
+            th
+              padding: .7rem
+              font-size: 16px
+
+            td
+              padding: .7rem
+              font-size: 16px
+
 @media only screen and(max-width: 700px)
   .wrapper
     max-width: 600px
@@ -131,6 +181,25 @@
     .footer-containt
       @include grid($column: 1fr 1fr)
 
+  /*************    gallery     **************/
+  .gallery
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*************    contact-page    **************/
+  .contact-page
+    .contact-details
+      .contact-list
+        table
+          tr
+            th
+              padding: .5rem
+              font-size: 14px
+
+            td
+              padding: .5rem
+              font-size: 14px
+
 @media only screen and(max-width: 600px)
   .wrapper
     max-width: 500px
@@ -144,6 +213,11 @@
   .our-service
     .list
       @include grid($column: 1fr)
+
+  /*************    out-team     **************/
+  .our-team
+    .list
+      @include grid($column: 1fr 1fr)
 
 @media only screen and(max-width: 500px)
   .wrapper
@@ -160,4 +234,30 @@
     padding: 3rem 0
 
     .footer-containt
+      @include grid($column: 1fr)
+
+  /*************    gallery     **************/
+  .gallery
+    .list
+      @include grid($column: 1fr)
+
+  /*************    contact-page    **************/
+  .contact-page
+    .contact-details
+      .contact-list
+        table
+          tr
+            th
+              font-size: 13px
+
+            td
+              font-size: 13px
+
+@media only screen and(max-width: 400px)
+
+  .wrapper
+    max-width: 350px
+  /*************    out-team     **************/
+  .our-team
+    .list
       @include grid($column: 1fr)

@@ -87,7 +87,12 @@ p {
 
 /*************    header     **************/
 header {
+  position: -webkit-sticky;
+  position: sticky;
   background-color: #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 11;
 }
 
 header .header-top {

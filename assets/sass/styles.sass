@@ -114,7 +114,10 @@ p
 
 /*************    header     **************/
 header
+  position: sticky
   background-color: $light
+  @include trans()
+  z-index: 11
 
   .header-top
     padding: 10px 20px

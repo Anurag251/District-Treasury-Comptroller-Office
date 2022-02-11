@@ -87,7 +87,12 @@ p {
 
 /*************    header     **************/
 header {
+  position: -webkit-sticky;
+  position: sticky;
   background-color: #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 11;
 }
 
 header .header-top {
@@ -847,6 +852,14 @@ footer .footer-item p {
         grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
   }
+  /*************    out-team     **************/
+  .our-team .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -882,6 +895,30 @@ footer .footer-item p {
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  /*************    out-team     **************/
+  .our-team .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  /*************    gallery     **************/
+  .gallery .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  /*************    contact-page    **************/
+  .contact-page .contact-details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     grid-gap: 20px;
   }
 }
@@ -939,20 +976,44 @@ footer .footer-item p {
   .side-nav {
     display: block;
     position: fixed;
-    z-index: 10;
+    z-index: 12;
     top: 0;
     left: -310px;
     height: 100%;
     width: 300px;
     background-color: #001552;
     padding: 1rem;
-    -webkit-transition: .4s;
-    transition: .4s;
     pointer-events: none;
+    -webkit-transition: .3s;
+    transition: .3s;
   }
   .side-nav.active {
-    left: 0px;
+    left: -10px;
     pointer-events: auto;
+    -webkit-animation: sideNav 0.3s cubic-bezier(0.44, 0.54, 0.08, -0.14);
+            animation: sideNav 0.3s cubic-bezier(0.44, 0.54, 0.08, -0.14);
+  }
+  @-webkit-keyframes sideNav {
+    0% {
+      left: -310px;
+    }
+    70% {
+      left: 0px;
+    }
+    100% {
+      left: -10px;
+    }
+  }
+  @keyframes sideNav {
+    0% {
+      left: -310px;
+    }
+    70% {
+      left: 0px;
+    }
+    100% {
+      left: -10px;
+    }
   }
   .side-nav .nav-link li button {
     color: #ffffff;
@@ -1001,6 +1062,23 @@ footer .footer-item p {
     color: #001552;
     font-size: 17px;
   }
+  /*************    out-team     **************/
+  .our-team .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  /*************    contact-page    **************/
+  .contact-page .contact-details .contact-list table tr th {
+    padding: .7rem;
+    font-size: 16px;
+  }
+  .contact-page .contact-details .contact-list table tr td {
+    padding: .7rem;
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -1027,6 +1105,23 @@ footer .footer-item p {
         grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
   }
+  /*************    gallery     **************/
+  .gallery .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  /*************    contact-page    **************/
+  .contact-page .contact-details .contact-list table tr th {
+    padding: .5rem;
+    font-size: 14px;
+  }
+  .contact-page .contact-details .contact-list table tr td {
+    padding: .5rem;
+    font-size: 14px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1049,6 +1144,14 @@ footer .footer-item p {
         grid-template-columns: 1fr;
     grid-gap: 20px;
   }
+  /*************    out-team     **************/
+  .our-team .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1069,6 +1172,35 @@ footer .footer-item p {
     padding: 3rem 0;
   }
   footer .footer-containt {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  /*************    gallery     **************/
+  .gallery .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  /*************    contact-page    **************/
+  .contact-page .contact-details .contact-list table tr th {
+    font-size: 13px;
+  }
+  .contact-page .contact-details .contact-list table tr td {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .wrapper {
+    max-width: 350px;
+  }
+  /*************    out-team     **************/
+  .our-team .list {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;

@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- css -->
     <link rel="stylesheet" href="./assets/sass/styles.css" />
+
+    <!-- responsive -->
+    <link rel="stylesheet" href="./assets/sass/responsive.css" />
+
     <!-- fontawesome -->
     <link
       rel="stylesheet"
@@ -17,76 +22,124 @@
   </head>
   <body>
     <header>
-      <div class="header-top">
-        <div class="logo">
-          <img src="./assets/images/logo.png" alt="logo" />
-        </div>
-        <div class="company-name">
-          <h5>Government of Nepal</h5>
-          <h5>Ministry of Finance</h5>
-          <h2>Financial Comptroller General Office (FCGO)</h2>
-        </div>
-        <div class="flag">
-          <img src="./assets/images/flag.gif" alt="flag" />
-        </div>
-      </div>
-
-      <div class="navbar">
-        <div class="wrapper">
-          <ul class="nav-link">
-            <li>
-              <a href="index.html"><button class="link">Home</button></a>
-            </li>
-            <li>
-              <a href="news.html"><button class="link">News</button></a>
-            </li>
-            <li>
-              <a href="download.html"
-                ><button class="link">Resources</button></a
-              >
-            </li>
-            <li>
-              <a href="gallery.html"><button class="link">Gallery</button></a>
-            </li>
-            <li>
-              <a href="teams.html"><button class="link">Teams</button></a>
-            </li>
-            <li>
-              <a href="contact.html"><button class="link">Contact</button></a>
-            </li>
-          </ul>
-
-          <div class="others">
-            <div class="social-media-icons">
-              <div class="icon">
-                <a href="#">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </div>
-
-              <div class="icon">
-                <a href="#">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-
-              <div class="icon">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </div>
+      <div class="desktop-header">
+        <div class="header-top">
+          <div class="wrapper">
+            <div class="logo">
+              <img src="./assets/images/logo.png" alt="logo" />
             </div>
+            <div class="company-name">
+              <h5>Government of Nepal</h5>
+              <h5>Ministry of Finance</h5>
+              <h2>Financial Comptroller General Office (FCGO)</h2>
+            </div>
+            <div class="flag">
+              <img src="./assets/images/flag.gif" alt="flag" />
+            </div>
+          </div>
+        </div>
 
-            <div class="line"></div>
+        <div class="navbar">
+          <div class="wrapper">
+            <ul class="nav-link">
+              <li>
+                <a href="index.html"><button class="link">Home</button></a>
+              </li>
+              <li>
+                <a href="news.html"><button class="link">News</button></a>
+              </li>
+              <li>
+                <a href="download.html"
+                  ><button class="link">Resources</button></a
+                >
+              </li>
+              <li>
+                <a href="gallery.html"><button class="link">Gallery</button></a>
+              </li>
+              <li>
+                <a href="teams.html"><button class="link">Teams</button></a>
+              </li>
+              <li>
+                <a href="contact.html"><button class="link">Contact</button></a>
+              </li>
+            </ul>
 
-            <div class="language-switch">
-              <button class="active">EN</button>
-              <button>NP</button>
+            <div class="others">
+              <div class="social-media-icons">
+                <div class="icon">
+                  <a href="#">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+
+                <div class="icon">
+                  <a href="#">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+
+                <div class="icon">
+                  <a href="#">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="line"></div>
+
+              <div class="language-switch">
+                <button class="active" id="engLang">EN</button>
+                <button id="nepLang">NP</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="mobile-header">
+        <div class="wrapper">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="logo" />
+          </div>
+
+          <div class="side-nav-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
     </header>
+
+    <div class="side-nav">
+      <ul class="nav-link">
+        <li class="logo-sec">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="logo" />
+          </div>
+
+          <div class="side-nav-close-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        </li>
+        <li>
+          <a href="index.html"><button class="link">Home</button></a>
+        </li>
+        <li>
+          <a href="news.html"><button class="link">News</button></a>
+        </li>
+        <li>
+          <a href="download.html"><button class="link">Resources</button></a>
+        </li>
+        <li>
+          <a href="gallery.html"><button class="link">Gallery</button></a>
+        </li>
+        <li>
+          <a href="teams.html"><button class="link">Teams</button></a>
+        </li>
+        <li>
+          <a href="contact.html"><button class="link">Contact</button></a>
+        </li>
+      </ul>
+    </div>
 
     <div class="banner">
       <div class="swiper mySwiper">
@@ -200,7 +253,7 @@
     <footer>
       <div class="wrapper">
         <div class="footer-containt">
-          <div class="quick-links">
+          <div class="footer-item">
             <div class="footer-title">Quick Links</div>
             <ul>
               <li>
@@ -256,7 +309,7 @@
             </ul>
           </div>
 
-          <div class="system-links">
+          <div class="footer-item">
             <div class="footer-title">System Links</div>
             <ul>
               <li>
@@ -308,7 +361,7 @@
             </ul>
           </div>
 
-          <div class="contact-sec">
+          <div class="footer-item">
             <div class="footer-title">Contacts</div>
 
             <div class="item">
