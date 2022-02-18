@@ -273,6 +273,125 @@ header .navbar .language-switch button.active {
      object-fit: cover;
 }
 
+/*************    home-banner     **************/
+.home-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  overflow-x: hidden;
+  max-width: 2000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-banner .team-members {
+  width: 20%;
+  padding-right: 20px;
+}
+
+.home-banner .image-sliding {
+  width: 80%;
+  height: 100%;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+.home-banner .image-sliding .swiper-pagination-bullet {
+  background-color: #ffffff;
+}
+
+.home-banner .image-sliding img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.home-banner .member {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.home-banner .member .image {
+  height: 300px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home-banner .member .image .info {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 21, 82, 0.78);
+  backfrop-filter: blur(10px);
+  min-width: 230px;
+  padding: .7rem;
+}
+
+.home-banner .member .image .info .name, .home-banner .member .image .info p, .home-banner .member .image .info .phone, .home-banner .member .image .info strong {
+  color: #ffffff;
+}
+
+.home-banner .member .image .info .name {
+  font-size: 17px;
+}
+
+.home-banner .member .image .info p {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.home-banner .member .image .info .phone {
+  font-size: 12px;
+}
+
+.home-banner .members .swiper-slide .image {
+  height: 300px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home-banner .members .swiper-slide .image .info {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 21, 82, 0.78);
+  backfrop-filter: blur(10px);
+  min-width: 230px;
+  padding: .7rem;
+}
+
+.home-banner .members .swiper-slide .image .info .name, .home-banner .members .swiper-slide .image .info p, .home-banner .members .swiper-slide .image .info .phone, .home-banner .members .swiper-slide .image .info strong {
+  color: #ffffff;
+}
+
+.home-banner .members .swiper-slide .image .info .name {
+  font-size: 17px;
+}
+
+.home-banner .members .swiper-slide .image .info p {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.home-banner .members .swiper-slide .image .info .phone {
+  font-size: 12px;
+}
+
 /*************    about-us     **************/
 .about-us {
   display: -ms-grid;
@@ -838,5 +957,14 @@ footer .footer-item p {
 
 .side-nav, .mobile-header {
   display: none;
+}
+
+.information-board .image {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.information-board .image img {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

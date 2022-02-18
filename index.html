@@ -18,6 +18,8 @@
     />
     <!-- swiper -->
     <link rel="stylesheet" href="./assets/sass/swiper.min.css" />
+
+    <script src="./assets/js/jquery.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -141,26 +143,109 @@
       </ul>
     </div>
 
-    <div class="banner">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./assets/images/banner1.jpeg" alt="slider" />
-          </div>
+    <div class="home-banner">
+      <div class="image-sliding">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/images/banner1.jpeg" alt="slider" />
+            </div>
 
-          <div class="swiper-slide">
-            <img src="./assets/images/banner2.jpeg" alt="slider" />
-          </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/banner2.jpeg" alt="slider" />
+            </div>
 
-          <div class="swiper-slide">
-            <img src="./assets/images/banner3.jpeg" alt="slider" />
+            <div class="swiper-slide">
+              <img src="./assets/images/banner3.jpeg" alt="slider" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div class="team-members">
+        <div class="member">
+          <div
+            class="image"
+            style="background-image: url(./assets/images/profile.jpeg)"
+          >
+            <div class="info">
+              <h4 class="name">Navina Dhungana</h4>
+              <p>Information Officer</p>
+
+              <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+              <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
+            </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
+
+        <div class="members">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="image"
+                  style="background-image: url(./assets/images/profile.jpeg)"
+                >
+                  <div class="info">
+                    <h4 class="name">Navina Dhungana</h4>
+                    <p>Information Officer</p>
+
+                    <div class="phone">
+                      <strong>Mobile No:</strong> 9851183318
+                    </div>
+                    <div class="phone">
+                      <strong>Phone No:</strong> 01-4770749
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="image"
+                  style="background-image: url(./assets/images/profile.jpeg)"
+                >
+                  <div class="info">
+                    <h4 class="name">Navina Dhungana</h4>
+                    <p>Information Officer</p>
+
+                    <div class="phone">
+                      <strong>Mobile No:</strong> 9851183318
+                    </div>
+                    <div class="phone">
+                      <strong>Phone No:</strong> 01-4770749
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="image"
+                  style="background-image: url(./assets/images/profile.jpeg)"
+                >
+                  <div class="info">
+                    <h4 class="name">Navina Dhungana</h4>
+                    <p>Information Officer</p>
+
+                    <div class="phone">
+                      <strong>Mobile No:</strong> 9851183318
+                    </div>
+                    <div class="phone">
+                      <strong>Phone No:</strong> 01-4770749
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- <div id="google_translate_element"></div> -->
+    <div id="google_translate_element"></div>
     <!-- <input
       type="button"
       onclick='document.getElementById("sel").options[1].selected = true;'
@@ -674,39 +759,56 @@
 
     <!-- <option value="en">kad</option> -->
 
-    <!-- <script>
+    <script>
       const runAfter = () => {
         const eng = document.querySelector("option[value='en']");
         const nep = document.querySelector("option[value='ne']");
+        const fromElement = document.querySelector(".skiptranslate div select");
+
+        // const forcedClickBtn = document.createElement("button");
+        // forcedClickBtn.innerText = "click";
+        // fromElement.appendChild(forcedClickBtn);
 
         const engLang = document.querySelector("#engLang");
         const nepLang = document.querySelector("#nepLang");
 
+        console.log(fromElement);
+
         engLang.addEventListener("click", () => {
-          eng.click();
-          eng.selected = true;
-          console.log(eng);
+          $(fromElement).val("en").trigger("change");
+
+          // fromElement.click();
+          // eng.click();
+          // eng.selected = true;
+          // console.log(eng);
+
+          // forcedClickBtn.click();
+
+          // console.log(forcedClickBtn);
         });
 
         nepLang.addEventListener("click", () => {
-          nep.click();
-          nep.selected = true;
+          $(fromElement).val("ne").trigger("change");
+          // nep.click();
+          // nep.selected = true;
 
-          console.log(nep);
+          // forcedClickBtn.click();
+
+          // console.log(nep);
         });
       };
 
       setTimeout(runAfter, 2000);
-    </script> -->
+    </script>
 
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           { pageLanguage: "en" },
           "google_translate_element"
         );
       }
-    </script> -->
+    </script>
 
     <script src="./assets/js/script.js"></script>
 
@@ -718,7 +820,19 @@
     <!-- swiper -->
     <script src="./assets/js/swiper.min.js"></script>
     <script>
-      var swiper = new Swiper(".banner .mySwiper", {
+      var swiper = new Swiper(".home-banner .image-sliding .mySwiper", {
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+
+      var swiper = new Swiper(".home-banner .members .mySwiper", {
         autoplay: {
           delay: 2500,
           disableOnInteraction: false,

@@ -56,6 +56,36 @@ $para: #2D2D2D
   bottom: 0
   background-color: rgba(#000000, $opacity)
 
+@mixin member($size)
+  .image
+    height: $size
+    border-radius: 10px
+    @include imageBg()
+    position: relative
+
+    .info
+      position: absolute
+      left: 5px
+      bottom: 5px
+      border-radius: 10px
+      background-color: rgba($dark, .78)
+      backfrop-filter: blur(10px)
+      min-width: 230px
+      padding: .7rem
+
+      .name, p, .phone, strong
+        color: $light
+
+      .name
+        font-size: 17px
+
+      p
+        font-size: 14px
+        margin-bottom: 1rem
+
+      .phone
+        font-size: 12px
+
 body
   background-color: $light
   --swiper-theme-color: #294186
@@ -211,6 +241,41 @@ header
     height: 79.5vh
     object-fit: cover
 
+/*************    home-banner     **************/
+.home-banner
+  @include flex($justify: space-between)
+  height: 100%
+  overflow-x: hidden
+  max-width: 2000px
+  width: 100%
+  margin: 0 auto
+
+  .team-members
+    width: 20%
+    padding-right: 20px
+
+  .image-sliding
+    width: 80%
+    height: 100%
+    padding-right: 20px
+    overflow: hidden
+
+    .swiper-pagination-bullet
+      background-color: $light
+
+    img
+      width: 100%
+      object-fit: cover
+
+  .member
+    @include member($size: 300px)
+    overflow: hidden
+    margin-bottom: 20px
+
+  .members
+    .swiper-slide
+      @include member(300px)
+
 /*************    about-us     **************/
 .about-us
   @include grid($column: 3fr 1fr)
@@ -222,34 +287,7 @@ header
       font-weight: 600
 
   .about-image
-    .image
-      height: 400px
-      border-radius: 10px
-      @include imageBg()
-      position: relative
-
-      .info
-        position: absolute
-        left: 5px
-        bottom: 5px
-        border-radius: 10px
-        background-color: rgba($dark, .78)
-        backfrop-filter: blur(10px)
-        min-width: 230px
-        padding: .7rem
-
-        .name, p, .phone, strong
-          color: $light
-
-        .name
-          font-size: 17px
-
-        p
-          font-size: 14px
-          margin-bottom: 1rem
-
-        .phone
-          font-size: 12px
+    @include member(400px)
 
 /*************    notice     **************/
 .notice
@@ -409,7 +447,6 @@ footer
       font-weight: normal
       font-size: 16px
       line-height: 22px
-
       color: #BFBFBF
 
 /*************    gallery     **************/
@@ -617,3 +654,11 @@ footer
 
 .side-nav, .mobile-header
   display: none
+
+.information-board
+  .image
+    max-width: 700px
+    margin: 0 auto
+
+    img
+      width: 100%

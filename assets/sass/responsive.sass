@@ -13,6 +13,14 @@
     .list
       @include grid($column: 1fr 1fr 1fr 1fr 1fr)
 
+  /*************    home-banner     **************/
+  .home-banner
+    .team-members
+      width: 25%
+
+    .image-sliding
+      width: 75%
+
 @media only screen and(max-width: 1000px)
   .wrapper
     max-width: 800px
@@ -254,10 +262,36 @@
               font-size: 13px
 
 @media only screen and(max-width: 400px)
+  .title
+    font-size: 30px
 
   .wrapper
     max-width: 350px
+
   /*************    out-team     **************/
   .our-team
     .list
       @include grid($column: 1fr)
+
+  /*************    footer     **************/
+  footer
+    .footer-title
+      font-size: 24px
+      margin-bottom: .7rem
+
+    ul
+      li
+        a
+          button
+            font-size: 14px
+
+            i
+              margin-right: 8px
+              font-size: 11px
+
+    .footer-item
+      .footer-sub-title
+        font-size: 18px
+
+      p
+        font-size: 14px
