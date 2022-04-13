@@ -1149,8 +1149,8 @@ footer .footer-item p {
 .gallery .list .item .gallery-image:hover::after {
   top: 20%;
   left: 20%;
-  height: 600px;
-  width: 600px;
+  height: 800px;
+  width: 800px;
   background-color: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
