@@ -11,11 +11,6 @@
     <!-- responsive -->
     <link rel="stylesheet" href="./assets/sass/responsive.css" />
 
-    <!-- fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
     <!-- swiper -->
     <link rel="stylesheet" href="./assets/sass/swiper.min.css" />
     <title>Document</title>
@@ -212,13 +207,83 @@
       </ul>
     </div>
 
+    <div class="image-popup">
+      <div class="bgImagePop">
+        <div class="close-popup fas fa-times"></div>
+        <div class="images">
+          <img class="img imgFile" alt="" />
+          <embed class="img pdfFile" data-pdf="true" />
+        </div>
+      </div>
+    </div>
+
     <section>
       <div class="wrapper">
-        <div class="information-board">
-          <div class="title">Information Board</div>
+        <div class="details-page">
+          <div class="details">
+            <img
+              class="details-image"
+              src="./assets/images/notice1.jpeg"
+              alt="details-image"
+            />
 
-          <div class="image">
-            <img src="./assets/images/information.jpeg" alt="information" />
+            <!-- <embed
+              class="details-image"
+              src="./assets/images/sample.pdf"
+              data-pdf="true"
+            /> -->
+
+            <div class="details-title">
+              <h2 class="name">Lorem ipsum dolor</h2>
+              <p class="time">
+                <i class="fas fa-clock"></i> 10:39 AM / DEC / 10
+              </p>
+            </div>
+
+            <p class="desc">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad ipsum
+              eos omnis voluptates doloribus. Dignissimos blanditiis veritatis
+              nulla quaerat sed dolore sunt dolor. Exercitationem distinctio
+              ullam sunt pariatur doloribus eaque!
+            </p>
+          </div>
+
+          <div class="recent">
+            <h1>Recent News</h1>
+
+            <div class="list">
+              <a href="#">
+                <div class="item">
+                  <img src="./assets/images/notice7.jpeg" alt="" />
+
+                  <div class="name">Lorem ipsum dolor</div>
+                </div>
+              </a>
+
+              <a href="#">
+                <div class="item">
+                  <img src="./assets/images/notice3.jpeg" alt="" />
+
+                  <div class="name">Lorem ipsum dolor</div>
+                </div>
+              </a>
+
+              <a href="#">
+                <div class="item">
+                  <img src="./assets/images/notice4.jpeg" alt="" />
+
+                  <div class="name">Lorem ipsum dolor</div>
+                </div>
+              </a>
+
+              <a href="#">
+                <div class="item">
+                  <img src="./assets/images/notice8.jpeg" alt="" />
+
+                  <div class="name">Lorem ipsum dolor</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -368,6 +433,10 @@
     <!-- swiper -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/swiper.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a094afbc57.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       var swiper = new Swiper(".banner .mySwiper", {
         autoplay: {

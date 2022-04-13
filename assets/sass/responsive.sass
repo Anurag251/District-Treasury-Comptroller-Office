@@ -6,7 +6,7 @@
 
   /*************    about-us     **************/
   .about-us
-    @include grid($column: 2fr 1fr)
+    @include grid($column: 1fr)
 
   /*************    out-team     **************/
   .our-team
@@ -28,6 +28,27 @@
   .title
     font-size: 40px
 
+  /*************    home-banner     **************/
+  .home-banner
+    @include flex($justify: space-between)
+    flex-direction: column
+
+    .team-members
+      width: 100%
+      @include flex($justify: space-between)
+      padding: 0
+
+      .member
+        width: 32%
+        margin-bottom: 0
+
+      .members
+        width: 66%
+
+    .image-sliding
+      width: 100%
+      padding: 0
+
   /*************    about-us     **************/
   .about-us
     @include grid($column: 1fr)
@@ -37,8 +58,12 @@
 
   /*************    notice     **************/
   .notice
+
+    .part
+      @include grid($column: 1fr 4fr)
+
     .list
-      @include grid($column: 1fr 1fr 1fr)
+      @include grid($column: 1fr 1fr )
 
   /*************    our-service     **************/
   .our-service
@@ -59,6 +84,28 @@
   .contact-page
     .contact-details
       @include grid($column: 1fr)
+
+  /*************    details-page    **************/
+  .details-page
+    @include grid($column: 1fr)
+
+    .recent
+      .list
+        .item
+          img
+            height: 100px
+            width: 160px
+
+          .name
+            font-size: 18px
+
+  /*************    header     **************/
+  header
+    .navbar
+      .wrapper
+        .nav-link
+          li
+            margin-right: 1.5rem
 
 @media only screen and(max-width: 800px)
   .wrapper
@@ -100,6 +147,7 @@
     top: 0
     left: -310px
     height: 100%
+    overflow-y: auto
     width: 300px
     background-color: $dark
     padding: 1rem
@@ -123,10 +171,50 @@
 
     .nav-link
       li
+        border-bottom: 1px solid rgba($light, .2)
+        border-top: 1px solid rgba($light, .2)
+
+        &:nth-child(1)
+          border-bottom: none
+          border-top: none
+
+        &.more-btn
+          button
+            @include flex($justify: space-between)
+            width: 100%
+
+            i
+              font-size: 14px
+
+          .more-links
+            padding: 0 1rem
+            margin-left: 1rem
+            background-color: rgba($light, .7)
+            border-radius: 10px
+            @include trans()
+            pointer-events: none
+            max-height: 0
+            opacity: 0
+
+            &.active
+              max-height: 1000px
+              opacity: 1
+              pointer-events: auto
+
+            li
+              border-bottom: 1px solid $dark
+
+              &:nth-last-child(1)
+                border-bottom: none
+
+            button
+              color: $dark
+
         button
           color: $light
           font-size: 18px
           padding: 1rem
+          cursor: pointer
 
         &.logo-sec
           margin-bottom: 2rem
@@ -153,6 +241,11 @@
               color: $dark
               font-size: 17px
 
+  /*************    notice     **************/
+  .notice
+    .part
+      @include grid($column: 1fr 3fr)
+
   /*************    out-team     **************/
   .our-team
     .list
@@ -178,8 +271,11 @@
 
   /*************    notice     **************/
   .notice
+    .part
+      @include grid($column: 1fr 2fr)
+
     .list
-      @include grid($column: 1fr 1fr)
+      @include grid($column: 1fr )
 
   /*************    footer     **************/
   footer
@@ -208,14 +304,26 @@
               padding: .5rem
               font-size: 14px
 
+  /*************    home-banner     **************/
+  .home-banner
+    .team-members
+      .member
+        width: 34%
+
+      .members
+        width: 65%
+
 @media only screen and(max-width: 600px)
   .wrapper
     max-width: 500px
 
   /*************    notice     **************/
   .notice
+    .part
+      @include grid($column: 1fr 1.5fr)
+
     .list
-      @include grid($column: 1fr 1fr)
+      @include grid($column: 1fr )
 
   /*************    our-service     **************/
   .our-service
@@ -227,12 +335,36 @@
     .list
       @include grid($column: 1fr 1fr)
 
+  /*************    details-page    **************/
+  .details-page
+    .recent
+      .list
+        .item
+          img
+            height: 60px
+            width: 100px
+
+          .name
+            font-size: 15px
+
+  /*************    home-banner     **************/
+  .home-banner
+    .team-members
+      .member
+        width: 49%
+
+      .members
+        width: 49%
+
 @media only screen and(max-width: 500px)
   .wrapper
     max-width: 400px
 
   /*************    notice     **************/
   .notice
+    .part
+      @include grid($column: 1fr)
+
     .list
       @include grid($column: 1fr )
 
@@ -260,6 +392,24 @@
 
             td
               font-size: 13px
+
+  /*************    home-banner     **************/
+  .home-banner
+    .image-sliding
+      height: 400px
+      margin-bottom: 10px
+
+    .team-members
+      flex-direction: column
+      max-width: 300px
+      margin: 0 auto
+
+      .member
+        width: 100%
+        margin-bottom: 10px
+
+      .members
+        width: 100%
 
 @media only screen and(max-width: 400px)
   .title

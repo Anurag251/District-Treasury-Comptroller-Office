@@ -11,17 +11,21 @@
     <!-- responsive -->
     <link rel="stylesheet" href="./assets/sass/responsive.css" />
 
-    <!-- fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
     <!-- swiper -->
     <link rel="stylesheet" href="./assets/sass/swiper.min.css" />
 
+    <!-- jquery -->
     <script src="./assets/js/jquery.js"></script>
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/a094afbc57.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Document</title>
   </head>
+
   <body>
     <header>
       <div class="desktop-header">
@@ -35,6 +39,7 @@
               <h5>Ministry of Finance</h5>
               <h2>Financial Comptroller General Office (FCGO)</h2>
             </div>
+
             <div class="flag">
               <img src="./assets/images/flag.gif" alt="flag" />
             </div>
@@ -44,25 +49,90 @@
         <div class="navbar">
           <div class="wrapper">
             <ul class="nav-link">
+              <!-- <button class="side-information-btn">
+                <i class="fas fa-bars"></i>
+              </button> -->
+
               <li>
-                <a href="index.html"><button class="link">Home</button></a>
+                <a href="index.html" id="navLink">
+                  <button class="link" id="linkBtn">Home</button>
+                </a>
               </li>
+
               <li>
-                <a href="news.html"><button class="link">News</button></a>
-              </li>
-              <li>
-                <a href="download.html"
-                  ><button class="link">Resources</button></a
+                <a href="news.html" id="navLink"
+                  ><button class="link" id="linkBtn">News</button></a
                 >
               </li>
+
               <li>
-                <a href="gallery.html"><button class="link">Gallery</button></a>
+                <a href="contact.html" id="navLink"
+                  ><button class="link" id="linkBtn">Contact</button></a
+                >
               </li>
-              <li>
-                <a href="teams.html"><button class="link">Teams</button></a>
+
+              <li class="more-btn">
+                <button class="link">
+                  More <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <ul class="more-links">
+                  <li>
+                    <a href="about-us.html"
+                      ><button class="link">About Us</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="teams.html"
+                      ><button class="link">Our Teams</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="gallery.html" id="navLink"
+                      ><button class="link" id="linkBtn">Gallery</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="information.html"
+                      ><button class="link">Information Board</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="download.html" id="navLink"
+                      ><button class="link" id="linkBtn">Resources</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="wada-patra.html"
+                      ><button class="link">Wada Patra</button></a
+                    >
+                  </li>
+                </ul>
               </li>
-              <li>
-                <a href="contact.html"><button class="link">Contact</button></a>
+
+              <li class="more-btn">
+                <button class="link">
+                  Newrmis <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <ul class="more-links">
+                  <li>
+                    <a href="https://newrmis.fcgo.gov.np/#/auth/login"
+                      ><button class="link">Newrmis</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="https://rajaswa.fcgo.gov.np/#/auth/login"
+                      ><button class="link">Rajaswa</button></a
+                    >
+                  </li>
+                </ul>
               </li>
             </ul>
 
@@ -90,8 +160,7 @@
               <div class="line"></div>
 
               <div class="language-switch">
-                <button class="active" id="engLang">EN</button>
-                <button id="nepLang">NP</button>
+                <div id="google_translate_element"></div>
               </div>
             </div>
           </div>
@@ -122,26 +191,155 @@
             <i class="fas fa-times"></i>
           </div>
         </li>
+
         <li>
           <a href="index.html"><button class="link">Home</button></a>
         </li>
+
         <li>
           <a href="news.html"><button class="link">News</button></a>
         </li>
+
         <li>
           <a href="download.html"><button class="link">Resources</button></a>
         </li>
+
         <li>
           <a href="gallery.html"><button class="link">Gallery</button></a>
         </li>
-        <li>
-          <a href="teams.html"><button class="link">Teams</button></a>
-        </li>
+
         <li>
           <a href="contact.html"><button class="link">Contact</button></a>
         </li>
+
+        <li class="more-btn" id="dropDownBtn">
+          <button class="link">
+            More <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <ul class="more-links" id="dropDown">
+            <li>
+              <a href="about-us.html"><button class="link">About Us</button></a>
+            </li>
+
+            <li>
+              <a href="teams.html"><button class="link">Our Teams</button></a>
+            </li>
+
+            <li>
+              <a href="information.html"
+                ><button class="link">Information Board</button></a
+              >
+            </li>
+
+            <li>
+              <a href="wada-patra.html"
+                ><button class="link">Wada Patra</button></a
+              >
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
+
+    <!-- <div class="side-information">
+      <ul class="nav-link">
+        <li class="logo-sec">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="logo" />
+          </div>
+
+          <div class="side-information-close">
+            <i class="fas fa-times"></i>
+          </div>
+        </li>
+
+        
+        <li class="more-btn" id="dropDownBtn">
+          <button class="link">
+            विवरण <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <ul class="more-links" id="dropDown">
+            <li>
+              <a href="about-us.html"><button class="link">About Us</button></a>
+            </li>
+
+            <li>
+              <a href="teams.html"><button class="link">Our Teams</button></a>
+            </li>
+
+            <li>
+              <a href="information.html"
+                ><button class="link">Information Board</button></a
+              >
+            </li>
+
+            <li>
+              <a href="wada-patra.html"
+                ><button class="link">Wada Patra</button></a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="more-btn" id="dropDownBtn">
+          <button class="link">
+            डाउनलोड <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <ul class="more-links" id="dropDown">
+            <li>
+              <a href="about-us.html"><button class="link">About Us</button></a>
+            </li>
+
+            <li>
+              <a href="teams.html"><button class="link">Our Teams</button></a>
+            </li>
+
+            <li>
+              <a href="information.html"
+                ><button class="link">Information Board</button></a
+              >
+            </li>
+
+            <li>
+              <a href="wada-patra.html"
+                ><button class="link">Wada Patra</button></a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="more-btn" id="dropDownBtn">
+          <button class="link">
+            कार्यालय ठेगाना <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <ul class="more-links" id="dropDown">
+            <li>
+              <a href="about-us.html"><button class="link">About Us</button></a>
+            </li>
+
+            <li>
+              <a href="teams.html"><button class="link">Our Teams</button></a>
+            </li>
+
+            <li>
+              <a href="information.html"
+                ><button class="link">Information Board</button></a
+              >
+            </li>
+
+            <li>
+              <a href="wada-patra.html"
+                ><button class="link">Wada Patra</button></a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div> -->
 
     <div class="home-banner">
       <div class="image-sliding">
@@ -164,22 +362,16 @@
       </div>
 
       <div class="team-members">
-        <div class="member">
-          <div
-            class="image"
-            style="background-image: url(./assets/images/profile.jpeg)"
-          >
-            <div class="info">
-              <h4 class="name">Navina Dhungana</h4>
-              <p>Information Officer</p>
+        <img src="./assets/images/profile.jpeg" alt="" />
+        <div class="info">
+          <h4 class="name">Navina Dhungana</h4>
+          <p>Information Officer</p>
 
-              <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
-              <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
-            </div>
-          </div>
+          <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+          <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
         </div>
 
-        <div class="members">
+        <!-- <div class="members">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -241,11 +433,10 @@
             </div>
             <div class="swiper-pagination"></div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <div id="google_translate_element"></div>
     <!-- <input
       type="button"
       onclick='document.getElementById("sel").options[1].selected = true;'
@@ -281,8 +472,12 @@
               accounts keeping of the government through the accounting
               personnel and staff recruited and administered by it.
             </p>
+
+            <a href="about-us.html">
+              <button>Read More <i class="fas fa-arrow-right"></i></button>
+            </a>
           </div>
-          <div class="about-image">
+          <!-- <div class="about-image">
             <div
               class="image"
               style="background-image: url(./assets/images/profile.jpeg)"
@@ -295,6 +490,307 @@
                 <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="bg">
+      <div class="wrapper">
+        <div class="our-service">
+          <div class="title">Our Service</div>
+
+          <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="#">
+                    <img src="./assets/images/service1.jpeg" alt="service" />
+                    <div class="inner">
+                      <div class="details">
+                        <div class="name">Treasury Single Account (TSA)</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="#">
+                    <img src="./assets/images/service2.jpeg" alt="service" />
+                    <div class="inner">
+                      <div class="details">
+                        <div class="name">Treasury Single Account (TSA)</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="#">
+                    <img src="./assets/images/service3.jpeg" alt="service" />
+                    <div class="inner">
+                      <div class="details">
+                        <div class="name">Treasury Single Account (TSA)</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="#">
+                    <img src="./assets/images/service4.jpeg" alt="service" />
+                    <div class="inner">
+                      <div class="details">
+                        <div class="name">Treasury Single Account (TSA)</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="#">
+                    <img src="./assets/images/service5.jpeg" alt="service" />
+                    <div class="inner">
+                      <div class="details">
+                        <div class="name">Treasury Single Account (TSA)</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="#">
+                    <img src="./assets/images/service6.jpeg" alt="service" />
+                    <div class="inner">
+                      <div class="details">
+                        <div class="name">Treasury Single Account (TSA)</div>
+
+                        <button>View Details</button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrapper">
+        <div class="notice">
+          <div class="title">Our Notice</div>
+
+          <ul class="btns">
+            <li class="active" id="btn" data-filter="all">All</li>
+            <li id="btn" data-filter="first">First</li>
+            <li id="btn" data-filter="second">Second</li>
+            <li id="btn" data-filter="third">Third</li>
+          </ul>
+
+          <!-- <div>
+              <ul class="useful-links">
+                <li class="heading">विवरण</li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> पृष्ठभूमि
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> दरबन्दी तालिका
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> कर्मचारी विवरण
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button><i class="fas fa-arrow-right"></i> Third</button>
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="useful-links">
+                <li class="heading">विवरण</li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> पृष्ठभूमि
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> दरबन्दी तालिका
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> कर्मचारी विवरण
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button><i class="fas fa-arrow-right"></i> Third</button>
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="useful-links">
+                <li class="heading">विवरण</li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> पृष्ठभूमि
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> दरबन्दी तालिका
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button>
+                      <i class="fas fa-arrow-right"></i> कर्मचारी विवरण
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <button><i class="fas fa-arrow-right"></i> Third</button>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+
+          <div class="list dataFilter">
+            <div class="item boxItem" id="second">
+              <div class="image">
+              <img src="./assets/images/notice1.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="first">
+              <div class="image">
+              <img src="./assets/images/notice2.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="first">
+              <div class="image">
+              <img src="./assets/images/notice3.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="second">
+              <div class="image">
+              <img src="./assets/images/notice4.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="third">
+              <div class="image">
+              <img src="./assets/images/notice5.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="second">
+              <div class="image">
+              <img src="./assets/images/notice6.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="third">
+              <div class="image">
+              <img src="./assets/images/notice7.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
+
+            <div class="item boxItem" id="third">
+              <div class="image">
+              <img src="./assets/images/notice8.jpeg" alt="" />
+              </div>
+
+              <div class="details">
+                <div class="name">Treasury Single Account (TSA)</div>
+
+                <a href="details-page.html"><button>View Details</button> </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -302,87 +798,87 @@
 
     <section class="bg">
       <div class="wrapper">
-        <div class="notice">
-          <div class="title">Our Notice</div>
+        <div class="gallery">
+          <div class="title">Gallery</div>
 
           <div class="list">
             <div class="item">
-              <img src="./assets/images/notice1.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice1.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice2.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice2.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice3.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice3.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice4.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice4.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice5.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice5.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice6.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice6.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice7.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice7.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/notice8.jpeg" alt="" />
-
-              <div class="details">
-                <div class="name">Treasury Single Account (TSA)</div>
-
-                <button>View Details</button>
+              <div
+                class="gallery-image"
+                id="galleryBtn"
+                style="background-image: url(./assets/images/notice8.jpeg)"
+              >
+                <div class="name">Dashain</div>
               </div>
             </div>
           </div>
@@ -395,220 +891,92 @@
         <div class="our-team">
           <div class="title">Our Teams</div>
 
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile8.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile2.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile3.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile4.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile5.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile6.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <img src="./assets/images/profile7.jpeg" alt="" />
-                  <div class="info">
-                    <h4 class="name">Navina Dhungana</h4>
-                    <p>Information Officer</p>
-
-                    <div class="phone">
-                      <strong>Mobile No:</strong> 9851183318
-                    </div>
-                    <div class="phone">
-                      <strong>Phone No:</strong> 01-4770749
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg">
-      <div class="wrapper">
-        <div class="our-service">
-          <div class="title">Our Service</div>
-
           <div class="list">
             <div class="item">
-              <img src="./assets/images/service1.jpeg" alt="service" />
-              <div class="inner">
-                <div class="details">
-                  <div class="name">Treasury Single Account (TSA)</div>
+              <img src="./assets/images/profile.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
 
-                  <button>View Details</button>
-                </div>
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/service2.jpeg" alt="service" />
-              <div class="inner">
-                <div class="details">
-                  <div class="name">Treasury Single Account (TSA)</div>
+              <img src="./assets/images/profile8.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
 
-                  <button>View Details</button>
-                </div>
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/service3.jpeg" alt="service" />
-              <div class="inner">
-                <div class="details">
-                  <div class="name">Treasury Single Account (TSA)</div>
+              <img src="./assets/images/profile2.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
 
-                  <button>View Details</button>
-                </div>
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/service4.jpeg" alt="service" />
-              <div class="inner">
-                <div class="details">
-                  <div class="name">Treasury Single Account (TSA)</div>
+              <img src="./assets/images/profile3.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
 
-                  <button>View Details</button>
-                </div>
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/service5.jpeg" alt="service" />
-              <div class="inner">
-                <div class="details">
-                  <div class="name">Treasury Single Account (TSA)</div>
+              <img src="./assets/images/profile4.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
 
-                  <button>View Details</button>
-                </div>
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
 
             <div class="item">
-              <img src="./assets/images/service6.jpeg" alt="service" />
-              <div class="inner">
-                <div class="details">
-                  <div class="name">Treasury Single Account (TSA)</div>
+              <img src="./assets/images/profile5.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
 
-                  <button>View Details</button>
-                </div>
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="./assets/images/profile6.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
+
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="./assets/images/profile7.jpeg" alt="" />
+              <div class="info">
+                <h4 class="name">Navina Dhungana</h4>
+                <p>Information Officer</p>
+
+                <div class="phone"><strong>Mobile No:</strong> 9851183318</div>
+                <div class="phone"><strong>Phone No:</strong> 01-4770749</div>
               </div>
             </div>
           </div>
@@ -757,9 +1125,44 @@
       </div>
     </footer>
 
-    <!-- <option value="en">kad</option> -->
+    <div class="gallery-popup">
+      <div class="gallery-bg"></div>
+      <div class="close-gallery-btn">
+        <img src="./assets/images/icons/close_big_light.svg" alt="" />
+      </div>
+      <div class="title">Food Fest</div>
+      <div class="gallery-images">
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide"
+              style="background-image: url(./assets/images/notice1.jpeg)"
+            ></div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./assets/images/notice2.jpeg)"
+            ></div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./assets/images/notice3.jpeg)"
+            ></div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./assets/images/notice4.jpeg)"
+            ></div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./assets/images/notice5.jpeg)"
+            ></div>
+          </div>
 
-    <script>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script>
       const runAfter = () => {
         const eng = document.querySelector("option[value='en']");
         const nep = document.querySelector("option[value='ne']");
@@ -799,12 +1202,12 @@
       };
 
       setTimeout(runAfter, 2000);
-    </script>
+    </script> -->
 
     <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
-          { pageLanguage: "en" },
+          { pageLanguage: "np" },
           "google_translate_element"
         );
       }
@@ -819,73 +1222,155 @@
 
     <!-- swiper -->
     <script src="./assets/js/swiper.min.js"></script>
+
     <script>
       var swiper = new Swiper(".home-banner .image-sliding .mySwiper", {
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-
-      var swiper = new Swiper(".home-banner .members .mySwiper", {
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    </script>
-
-    <script>
-      var swiper = new Swiper(".our-team .mySwiper", {
         slidesPerView: 1,
-        spaceBetween: 20,
         autoplay: {
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         },
+
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
+      });
+
+      // var swiper = new Swiper(".home-banner .members .mySwiper", {
+      //   autoplay: {
+      //     delay: 2500,
+      //     disableOnInteraction: false,
+      //   },
+
+      //   pagination: {
+      //     el: ".swiper-pagination",
+      //     clickable: true,
+      //   },
+
+      //   breakpoints: {
+      //     600: {
+      //       slidesPerView: 1,
+      //       spaceBetween: 5,
+      //     },
+
+      //     600: {
+      //       slidesPerView: 2,
+      //       spaceBetween: 5,
+      //     },
+
+      //     1000: {
+      //       slidesPerView: 1,
+      //       spaceBetween: 10,
+      //     },
+      //   },
+      // });
+
+      // var swiper = new Swiper(".our-team .mySwiper", {
+      //   slidesPerView: 1,
+      //   spaceBetween: 20,
+      //   autoplay: {
+      //     delay: 2500,
+      //     disableOnInteraction: false,
+      //   },
+      //   pagination: {
+      //     el: ".swiper-pagination",
+      //     clickable: true,
+      //   },
+      //   navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev",
+      //   },
+
+      //   breakpoints: {
+      //     440: {
+      //       slidesPerView: 2,
+      //       spaceBetween: 10,
+      //     },
+
+      //     640: {
+      //       slidesPerView: 3,
+      //       spaceBetween: 10,
+      //     },
+
+      //     700: {
+      //       slidesPerView: 4,
+      //       spaceBetween: 10,
+      //     },
+
+      //     900: {
+      //       slidesPerView: 5,
+      //       spaceBetween: 10,
+      //     },
+
+      //     1200: {
+      //       slidesPerView: 6,
+      //       spaceBetween: 10,
+      //     },
+      //   },
+      // });
+
+      // gallery-popup
+
+      var swiper = new Swiper(".our-service .mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // },
+
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
 
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
         breakpoints: {
-          440: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-
           640: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
             slidesPerView: 3,
-            spaceBetween: 10,
+            spaceBetween: 30,
           },
+        },
+      });
 
-          700: {
-            slidesPerView: 4,
-            spaceBetween: 10,
+      // gallery-popup
+      var swiper = new Swiper(".gallery-popup .mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        centeredSlides: true,
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 30,
           },
-
-          900: {
-            slidesPerView: 5,
-            spaceBetween: 10,
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
           },
-
-          1200: {
-            slidesPerView: 6,
-            spaceBetween: 10,
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
           },
         },
       });
