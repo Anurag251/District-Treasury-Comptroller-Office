@@ -66,10 +66,30 @@
                 >
               </li>
 
-              <li>
-                <a href="download.html" id="navLink"
-                  ><button class="link" id="linkBtn">Resources</button></a
-                >
+              <li class="more-btn">
+                <button class="link">
+                  Resources <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <ul class="more-links">
+                  <li>
+                    <a href="notice-details.html"
+                      ><button class="link">First</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="notice-details.html"
+                      ><button class="link">Second</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="notice-details.html" id="navLink"
+                      ><button class="link" id="linkBtn">Third</button></a
+                    >
+                  </li>
+                </ul>
               </li>
 
               <li class="more-btn">
@@ -1614,10 +1634,11 @@
       var swiper = new Swiper(".our-service .mySwiper", {
         slidesPerView: 1,
         spaceBetween: 10,
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // },
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
 
         navigation: {
           nextEl: ".swiper-button-next",

@@ -270,10 +270,14 @@ header .navbar .wrapper .nav-link .more-btn .more-links::after {
   height: 14px;
   width: 14px;
   background-color: #ffffff;
+  z-index: 1;
 }
 
 header .navbar .wrapper .nav-link .more-btn .more-links li {
+  position: relative;
   margin: 0;
+  width: 100%;
+  z-index: 2;
   border-bottom: 1px solid #001552;
 }
 
@@ -284,6 +288,11 @@ header .navbar .wrapper .nav-link .more-btn .more-links li:nth-last-child(1) {
 header .navbar .wrapper .nav-link .more-btn .more-links .link {
   color: #001552;
   text-align: center;
+  width: 100%;
+}
+
+header .navbar .wrapper .nav-link .more-btn .more-links .link:hover {
+  background-color: rgba(0, 21, 82, 0.1);
 }
 
 header .navbar .others {
