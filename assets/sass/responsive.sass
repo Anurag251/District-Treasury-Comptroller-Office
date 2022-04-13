@@ -59,6 +59,10 @@
   /*************    notice     **************/
   .notice
 
+    &.notice-details-page
+      .inner
+        @include grid($column:  1fr)
+
     .part
       @include grid($column: 1fr 4fr)
 
@@ -271,6 +275,12 @@
 
   /*************    notice     **************/
   .notice
+    .table
+      overflow-x: auto
+
+    table
+      width: 600px
+
     .part
       @include grid($column: 1fr 2fr)
 

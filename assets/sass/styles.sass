@@ -153,6 +153,7 @@ p
 
 button
   transition: 400ms cubic-bezier(0,0,0,1)
+  cursor: pointer
 
   &.animate
     transform: scale(0.95)
@@ -420,6 +421,36 @@ header
 
 /*************    notice     **************/
 .notice
+  &.notice-details-page
+    .inner
+      @include grid($column: 2fr 1fr)
+
+      .recent
+        h1
+          font-size: 24px
+          color: $dark
+
+        .item-list
+          margin-top: 1.5rem
+
+          .card
+            box-shadow: 0 1px 5px rgba($dark, .2)
+            @include flex($justify: flex-start)
+            margin-bottom: 1rem
+            transition: .4s cubic-bezier(0,0,0,1)
+
+            &:hover
+              transform: scale(1.01) translateY(-2px)
+              box-shadow: 0 3px 10px rgba($dark, .2)
+
+            .name
+              font-size: 14px
+              color: $dark
+              padding: 1rem
+              font-weight: 600
+
+              i
+                margin-right: 10px
 
   .part
     @include grid($column: 1fr 5fr)
@@ -482,6 +513,83 @@ header
     font-weight: 600
     text-align: left
     margin-bottom: 1rem
+
+  table
+    width: 100%
+
+    th
+      text-align: left
+      padding: .7rem 1rem
+      color: $light
+      background-color: $main
+      font-size: 14px
+
+      &:nth-last-child(1)
+        text-align: center
+
+      &.sn
+        text-align: center
+
+    tbody
+      position: fixed
+      opacity: 0
+      // transform: scale(.9)
+      pointer-events: none
+
+      &.active
+        position: relative
+        opacity: 1
+        // transform: scale(1)
+        pointer-events: auto
+        @include trans()
+
+      tr
+        background-color: rgba($main, .2)
+
+        &:hover
+          background-color: rgba($main, .25)
+
+        &:nth-child(even)
+          background-color: rgba($main, .1)
+
+          &:hover
+            background-color: rgba($main, .25)
+
+        &.no-bg
+          background-color: $light
+
+          &:hover
+            background-color: $light
+
+        button
+          padding: .4rem .8rem
+          color: $pri
+          border: 1.5px solid $pri
+          border-radius: 8px
+
+    td
+      text-align: left
+      padding: .7rem 1rem
+      font-size: 14px
+
+      &.sn
+        text-align: center
+
+      &:nth-child(1)
+        width: 90px
+
+      &:nth-last-child(1)
+        width: 130px
+        text-align: center
+
+    .view-more-btn
+      width: 100%
+      @include flex($justify: center)
+      text-align: center
+
+      button
+        text-align: center
+        @include button()
 
   .list
     @include grid($column: 1fr 1fr 1fr)

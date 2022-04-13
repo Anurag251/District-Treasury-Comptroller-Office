@@ -95,6 +95,10 @@ button.forEach((btn) => {
   btn.addEventListener("mouseup", () => {
     btn.classList.remove("animate");
   });
+
+  btn.addEventListener("mouseout", () => {
+    btn.classList.remove("animate");
+  });
 });
 
 // let url = navLink[1].getAttribute("href");

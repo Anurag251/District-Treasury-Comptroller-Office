@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/sass/styles.css" />
+
+    <!-- responsive -->
+    <link rel="stylesheet" href="./assets/sass/responsive.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="./assets/sass/swiper.min.css" />
+
+    <!-- jquery -->
+    <script src="./assets/js/jquery.js"></script>
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/a094afbc57.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="desktop-header">
+        <div class="header-top">
+          <div class="wrapper">
+            <div class="logo">
+              <img src="./assets/images/logo.png" alt="logo" />
+            </div>
+
+            <div class="company-name">
+              <h5>Government of Nepal</h5>
+              <h5>Ministry of Finance</h5>
+              <h2>Financial Comptroller General Office (FCGO)</h2>
+            </div>
+
+            <div class="flag">
+              <img src="./assets/images/flag.gif" alt="flag" />
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar">
+          <div class="wrapper">
+            <ul class="nav-link">
+              <!-- <button class="side-information-btn">
+                <i class="fas fa-bars"></i>
+              </button> -->
+
+              <li>
+                <a href="index.html" id="navLink">
+                  <button class="link" id="linkBtn">Home</button>
+                </a>
+              </li>
+
+              <li>
+                <a href="news.html" id="navLink"
+                  ><button class="link" id="linkBtn">News</button></a
+                >
+              </li>
+
+              <li>
+                <a href="download.html" id="navLink"
+                  ><button class="link" id="linkBtn">Resources</button></a
+                >
+              </li>
+
+              <li class="more-btn">
+                <button class="link">
+                  More <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <ul class="more-links">
+                  <li>
+                    <a href="about-us.html"
+                      ><button class="link">About Us</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="teams.html"
+                      ><button class="link">Our Teams</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="gallery.html" id="navLink"
+                      ><button class="link" id="linkBtn">Gallery</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="information.html"
+                      ><button class="link">Information Board</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="contact.html" id="navLink"
+                      ><button class="link" id="linkBtn">Contact</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="wada-patra.html"
+                      ><button class="link">Wada Patra</button></a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="more-btn">
+                <button class="link">
+                  Newrmis <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <ul class="more-links">
+                  <li>
+                    <a href="https://newrmis.fcgo.gov.np/#/auth/login"
+                      ><button class="link">Newrmis</button></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="https://rajaswa.fcgo.gov.np/#/auth/login"
+                      ><button class="link">Rajaswa</button></a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="others">
+              <div class="social-media-icons">
+                <div class="icon">
+                  <a href="#">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+
+                <div class="icon">
+                  <a href="#">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+
+                <div class="icon">
+                  <a href="#">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="line"></div>
+
+              <div class="language-switch">
+                <div id="google_translate_element"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-header">
+        <div class="wrapper">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="logo" />
+          </div>
+
+          <div class="side-nav-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="side-nav">
+      <ul class="nav-link">
+        <li class="logo-sec">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="logo" />
+          </div>
+
+          <div class="side-nav-close-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        </li>
+
+        <li>
+          <a href="index.html"><button class="link">Home</button></a>
+        </li>
+
+        <li>
+          <a href="news.html"><button class="link">News</button></a>
+        </li>
+
+        <li>
+          <a href="download.html"><button class="link">Resources</button></a>
+        </li>
+
+        <li>
+          <a href="gallery.html"><button class="link">Gallery</button></a>
+        </li>
+
+        <li>
+          <a href="contact.html"><button class="link">Contact</button></a>
+        </li>
+
+        <li class="more-btn" id="dropDownBtn">
+          <button class="link">
+            More <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <ul class="more-links" id="dropDown">
+            <li>
+              <a href="about-us.html"><button class="link">About Us</button></a>
+            </li>
+
+            <li>
+              <a href="teams.html"><button class="link">Our Teams</button></a>
+            </li>
+
+            <li>
+              <a href="information.html"
+                ><button class="link">Information Board</button></a
+              >
+            </li>
+
+            <li>
+              <a href="wada-patra.html"
+                ><button class="link">Wada Patra</button></a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <section>
+      <div class="wrapper">
+        <div class="notice notice-details-page">
+          <div class="title">Our Notice</div>
+
+          <div class="inner">
+            <div class="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="sn">SN</th>
+                    <th>File</th>
+                    <th>Download File</th>
+                  </tr>
+                </thead>
+
+                <tbody class="active">
+                  <tr>
+                    <td class="sn">1</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">2</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">3</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">4</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">5</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">6</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">7</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">8</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">9</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">10</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">11</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="sn">12</td>
+                    <td class="name">Treasury Single Account (TSA)</td>
+                    <td>
+                      <a href="./assets/images/banner1.jpeg" download>
+                        <button>Download</button>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="recent">
+              <h1>Recent News</h1>
+
+              <div class="item-list">
+                <a href="#">
+                  <div class="card">
+                    <div class="name">
+                      <i class="fas fa-arrow-right"></i> Lorem ipsum dolor
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="card">
+                    <div class="name">
+                      <i class="fas fa-arrow-right"></i> Lorem ipsum dolor
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="card">
+                    <div class="name">
+                      <i class="fas fa-arrow-right"></i> Lorem ipsum dolor
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="card">
+                    <div class="name">
+                      <i class="fas fa-arrow-right"></i> Lorem ipsum dolor
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer-containt">
+          <div class="footer-item">
+            <div class="footer-title">Quick Links</div>
+            <ul>
+              <li>
+                <a href="#">
+                  <button><i class="fas fa-check"></i> Home</button>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <button>
+                    <i class="fas fa-check"></i>
+                    office of the Prime Minister and council of Minister
+                  </button>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> Minister of Finance
+                  </button></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> Office of the Auditor General
+                  </button></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i>
+                    National Natural Resource and Fiscal Commission
+                  </button></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> Nepal Rastra Bank
+                  </button></a
+                >
+              </li>
+
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> PEFA Secretariat Nepal
+                  </button></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-item">
+            <div class="footer-title">System Links</div>
+            <ul>
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> TSA (Old Versions)
+                  </button></a
+                >
+              </li>
+
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> CGAS (Old Versions)
+                  </button></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><button><i class="fas fa-check"></i> PAMS</button></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><button><i class="fas fa-check"></i> RMIS</button></a
+                >
+              </li>
+
+              <li>
+                <a href="#"
+                  ><button><i class="fas fa-check"></i>SuTRA</button></a
+                >
+              </li>
+
+              <li>
+                <a href="#"
+                  ><button>
+                    <i class="fas fa-check"></i> Local Level Reporting System
+                    2076
+                  </button></a
+                >
+              </li>
+
+              <li>
+                <a href="#"
+                  ><button><i class="fas fa-check"></i> E-Attendance</button></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-item">
+            <div class="footer-title">Contacts</div>
+
+            <div class="item">
+              <h4 class="footer-sub-title">location</h4>
+              <p>
+                Financial Comptroller General Office(FCGO) Anamnagar, Kathmandu,
+                Nepal
+              </p>
+            </div>
+
+            <div class="item">
+              <h4 class="footer-sub-title">Phone</h4>
+              <p>00116670(Toll Free Number)</p>
+            </div>
+
+            <div class="item">
+              <h4 class="footer-sub-title">E-mail</h4>
+              <p>info@fcgo.gov.np</p>
+            </div>
+
+            <div class="item">
+              <h4 class="footer-sub-title">Fax</h4>
+              <p>fax: 977-147712</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "np" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script src="./assets/js/script.js"></script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>

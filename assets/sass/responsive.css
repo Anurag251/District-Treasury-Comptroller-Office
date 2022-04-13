@@ -87,6 +87,7 @@ p {
 button {
   -webkit-transition: 400ms cubic-bezier(0, 0, 0, 1);
   transition: 400ms cubic-bezier(0, 0, 0, 1);
+  cursor: pointer;
 }
 
 button.animate {
@@ -569,6 +570,58 @@ header .navbar .language-switch button.active {
 }
 
 /*************    notice     **************/
+.notice.notice-details-page .inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+
+.notice.notice-details-page .inner .recent h1 {
+  font-size: 24px;
+  color: #001552;
+}
+
+.notice.notice-details-page .inner .recent .item-list {
+  margin-top: 1.5rem;
+}
+
+.notice.notice-details-page .inner .recent .item-list .card {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 21, 82, 0.2);
+          box-shadow: 0 1px 5px rgba(0, 21, 82, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0, 1);
+  transition: 0.4s cubic-bezier(0, 0, 0, 1);
+}
+
+.notice.notice-details-page .inner .recent .item-list .card:hover {
+  -webkit-transform: scale(1.01) translateY(-2px);
+          transform: scale(1.01) translateY(-2px);
+  -webkit-box-shadow: 0 3px 10px rgba(0, 21, 82, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 21, 82, 0.2);
+}
+
+.notice.notice-details-page .inner .recent .item-list .card .name {
+  font-size: 14px;
+  color: #001552;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.notice.notice-details-page .inner .recent .item-list .card .name i {
+  margin-right: 10px;
+}
+
 .notice .part {
   display: -ms-grid;
   display: grid;
@@ -654,6 +707,114 @@ header .navbar .language-switch button.active {
   font-weight: 600;
   text-align: left;
   margin-bottom: 1rem;
+}
+
+.notice table {
+  width: 100%;
+}
+
+.notice table th {
+  text-align: left;
+  padding: .7rem 1rem;
+  color: #ffffff;
+  background-color: #294186;
+  font-size: 14px;
+}
+
+.notice table th:nth-last-child(1) {
+  text-align: center;
+}
+
+.notice table th.sn {
+  text-align: center;
+}
+
+.notice table tbody {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.notice table tbody.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.notice table tbody tr {
+  background-color: rgba(41, 65, 134, 0.2);
+}
+
+.notice table tbody tr:hover {
+  background-color: rgba(41, 65, 134, 0.25);
+}
+
+.notice table tbody tr:nth-child(even) {
+  background-color: rgba(41, 65, 134, 0.1);
+}
+
+.notice table tbody tr:nth-child(even):hover {
+  background-color: rgba(41, 65, 134, 0.25);
+}
+
+.notice table tbody tr.no-bg {
+  background-color: #ffffff;
+}
+
+.notice table tbody tr.no-bg:hover {
+  background-color: #ffffff;
+}
+
+.notice table tbody tr button {
+  padding: .4rem .8rem;
+  color: #CB3644;
+  border: 1.5px solid #CB3644;
+  border-radius: 8px;
+}
+
+.notice table td {
+  text-align: left;
+  padding: .7rem 1rem;
+  font-size: 14px;
+}
+
+.notice table td.sn {
+  text-align: center;
+}
+
+.notice table td:nth-child(1) {
+  width: 90px;
+}
+
+.notice table td:nth-last-child(1) {
+  width: 130px;
+  text-align: center;
+}
+
+.notice table .view-more-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.notice table .view-more-btn button {
+  text-align: center;
+  padding: .4rem 1rem;
+  font-size: 14px;
+  background-color: #CB3644;
+  color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .notice .list {
@@ -1701,6 +1862,13 @@ footer .footer-item p {
     grid-area: 1;
   }
   /*************    notice     **************/
+  .notice.notice-details-page .inner {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
   .notice .part {
     display: -ms-grid;
     display: grid;
@@ -1989,6 +2157,12 @@ footer .footer-item p {
     max-width: 600px;
   }
   /*************    notice     **************/
+  .notice .table {
+    overflow-x: auto;
+  }
+  .notice table {
+    width: 600px;
+  }
   .notice .part {
     display: -ms-grid;
     display: grid;
