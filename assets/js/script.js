@@ -109,45 +109,49 @@ button.forEach((btn) => {
 
 // console.log(filterPathname);
 
-const btns = document.querySelectorAll("#btn");
-const items = document.querySelectorAll(".boxItem");
+const filterDatas = document.querySelectorAll("#filterData");
 
-if (btns) {
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      let value = e.target.getAttribute("data-filter");
+filterDatas.forEach((filterData, idx) => {
+  const btns = filterData.querySelectorAll("#btn");
+  const items = filterData.querySelectorAll(".boxItem");
+
+  if (btns) {
+    btns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        let value = e.target.getAttribute("data-filter");
+
+        items.forEach((item) => {
+          const itemValue = item.getAttribute("id");
+
+          $(btn).addClass("active").siblings().removeClass("active");
+
+          if (itemValue === value) {
+            item.classList.add("active");
+          } else {
+            item.classList.remove("active");
+          }
+
+          if (value === "all") {
+            item.classList.add("active");
+          }
+        });
+      });
 
       items.forEach((item) => {
-        const itemValue = item.getAttribute("id");
-
-        $(btn).addClass("active").siblings().removeClass("active");
-
-        if (itemValue === value) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
+        value = btns[0].getAttribute("data-filter");
+        itemValue = item.getAttribute("id");
 
         if (value === "all") {
           item.classList.add("active");
         }
+
+        if (itemValue === value) {
+          item.classList.add("active");
+        }
       });
     });
-
-    items.forEach((item) => {
-      value = btns[0].getAttribute("data-filter");
-      itemValue = item.getAttribute("id");
-
-      if (value === "all") {
-        item.classList.add("active");
-      }
-
-      if (itemValue === value) {
-        item.classList.add("active");
-      }
-    });
-  });
-}
+  }
+});
 
 const popUp = document.querySelector(".image-popup");
 const popUpImage = document.querySelectorAll(".image-popup .img");
